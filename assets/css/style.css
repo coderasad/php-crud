@@ -1,0 +1,18 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#update{
+    display: none;
+}
+#delete{
+    display: none;
+}
+#alert-msg {
+    position: fixed;
+    right: 2%;
+    top: 8%;
+    width: 30%;
+    z-index: 99;
+}
