@@ -45,29 +45,27 @@
 						</div>
 						<div class="">
 							<span id="save" class="btn btn-info">Save</span>
-							<span id="update" class="btn btn-warning">Update</span>
-							<span id="delete" class="btn btn-danger">delete</span>
 						</div>
 					</form>
 				</div>
 				<!-- start countryArray  -->
 				<div class="col-3">
-					<?php 
-						$countryArray = [
-							'Bangladesh',
-							'Pakistan',
-							'India',
-							'Srilanka',
-							'Nepal',
-							'Bhutan',
-						];
+					<?php
+					$countryArray = [
+						'Bangladesh',
+						'Pakistan',
+						'India',
+						'Srilanka',
+						'Nepal',
+						'Bhutan',
+					];
 					?>
 					<ul class="list-group my-5">
 						<li class="list-group-item active">Country Name</li>
-						<?php 
-							foreach($countryArray as $data){ ?>
-								<li class="list-group-item" data-id="<?php echo $data ?>"><?php echo $data ?></li>
-							<?php }
+						<?php
+						foreach ($countryArray as $data) { ?>
+							<li class="list-group-item" data-id="<?php echo $data ?>"><?php echo $data ?></li>
+						<?php }
 						?>
 
 					</ul>
@@ -76,7 +74,7 @@
 			<!-- start view data  -->
 			<div class="row">
 				<div class="col-8 offset-2">
-					<h2>View Data</h2>
+					<h2 class="text-center">View Data</h2>
 					<table class="mb-0 text-center table border view_country">
 						<tr>
 							<th>Id</th>
@@ -85,21 +83,21 @@
 							<th>Country Code</th>
 						</tr>
 						<?php
-                    		$data = $om->view('info', '*');                           
-							$id = 1;
-							while($d = $data->fetch_object()) { 
-								$cid = $d->id;
-								$countryName = $d->countryName;
-								$shortName = $d->shortName;
-								$code = $d->code; ?>
-								<tr class="trData" cid='<?php echo $cid ?>' countryName='<?php echo $countryName ?>' shortName='<?php echo $shortName ?>' code='<?php echo $code ?>'>
-									<td><?php echo $id++ ?></td>
-									<td><?php echo $countryName ?></td>
-									<td><?php echo $shortName ?></td>
-									<td><?php echo $code ?></td>
-								</tr>
-								
-							<?php }
+						$data = $om->view('info', '*');
+						$id = 1;
+						while ($d = $data->fetch_object()) {
+							$cid = $d->id;
+							$countryName = $d->countryName;
+							$shortName = $d->shortName;
+							$code = $d->code; ?>
+							<tr class="trData" cid='<?php echo $cid ?>' countryName='<?php echo $countryName ?>' shortName='<?php echo $shortName ?>' code='<?php echo $code ?>'>
+								<td><?php echo $id++ ?></td>
+								<td><?php echo $countryName ?></td>
+								<td><?php echo $shortName ?></td>
+								<td><?php echo $code ?></td>
+							</tr>
+
+						<?php }
 						?>
 					</table>
 				</div>
@@ -107,7 +105,42 @@
 		</div>
 	</div>
 
+	<!-- model edit form  -->
+	
 
+	<div class="modal fade" id="ar-model">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Country Form</h5>
+					<button type="button" class="ar-close btn" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="p-3">
+						<div class="form-group">
+							<label for="country_name">Full Country Name</label>
+							<input type="text" name="country_name" class="form-control" placeholder="Enter Country Name">
+						</div>
+						<div class="form-group">
+							<label for="shortName">Short Name</label>
+							<input type="text" name="short_name" class="form-control" placeholder="Enter Short Name">
+						</div>
+						<div class="form-group">
+							<label for="code">Country Code</label>
+							<input type="text" name="codes" class="form-control" placeholder="Enter Country code">
+							<input type="hidden" name='id' value="">
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">					
+					<span id="update" class="btn btn-warning">Update</span>
+					<span id="delete" class="btn btn-danger">delete</span>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 

@@ -2,17 +2,16 @@
 body{
     font-family: 'Ubuntu', sans-serif;
 }
-
-#update{
-    display: none;
-}
-#delete{
-    display: none;
-}
 #alert-msg {
     position: fixed;
     right: 2%;
     top: 8%;
     width: 30%;
     z-index: 99;
+}
+#ar-model {
+    display: none;
+    opacity: 1 !important;
+    padding-top: 25px;
+    top: 35px;
 }
