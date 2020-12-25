@@ -3,12 +3,10 @@ $("document").ready(function () {
   // country name show input box 
   $("body").on("click", ".list-group-item", function () {    
     $('#save').show();
-    $('#update').hide();
-    $('#delete').hide();
     var cName = $(this).attr("data-id");
     $("input[name=countryName]").val(cName);
   });
-  // country name show input box 
+  // Model hide  
   $("body").on("click", ".ar-close", function () {    
     $('#ar-model').hide();
   });
